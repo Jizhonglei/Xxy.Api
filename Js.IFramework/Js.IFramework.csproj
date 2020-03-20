@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DF13C01-93BE-46C7-91A0-ADD9B13D1191}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Js.IFramework</RootNamespace>
+    <AssemblyName>Js.IFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\AutoMapperExtension.cs" />
+    <Compile Include="Base\EntityBase.cs" />
+    <Compile Include="Base\IDependency.cs" />
+    <Compile Include="Base\IUserManagerProvider.cs" />
+    <Compile Include="Base\Result.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\Expression.Extend.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\LikeNode.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\MemberNode.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\Node.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\OperationNode.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\SingleOperationNode.cs" />
+    <Compile Include="DapperExtension\ExpressionTree\ValueNode.cs" />
+    <Compile Include="DapperExtension\ISqlGenerator.cs" />
+    <Compile Include="DapperExtension\PagedList.cs" />
+    <Compile Include="DapperExtension\QueryParameter.cs" />
+    <Compile Include="DapperExtension\SqlGenerator.cs" />
+    <Compile Include="DapperExtension\SqlGenerator.Page.cs" />
+    <Compile Include="DapperExtension\SqlGenerator.Resolver.cs" />
+    <Compile Include="DapperExtension\SqlGeneratorConfig.cs" />
+    <Compile Include="DapperExtension\SqlProvider.cs" />
+    <Compile Include="DapperExtension\SqlQuery.cs" />
+    <Compile Include="DapperExtension\TableAttribute.cs" />
+    <Compile Include="Encryption\EncryptionFactory.cs" />
+    <Compile Include="Encryption\PemConvert.cs" />
+    <Compile Include="Encryption\SecurityHelper.cs" />
+    <Compile Include="IdHelper\DisposableAction.cs" />
+    <Compile Include="IdHelper\IdHelper.cs" />
+    <Compile Include="IdHelper\IdWorker.cs" />
+    <Compile Include="IdHelper\TimeExtensions.cs" />
+    <Compile Include="Infrastructure\DapperContext.cs" />
+    <Compile Include="Infrastructure\DapperContextConfig.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDapperContext.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\Parameters.cs" />
+    <Compile Include="Infrastructure\Repository.Async.cs" />
+    <Compile Include="Infrastructure\Repository.Basic.cs" />
+    <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Ioc\AssemblyFinder.cs" />
+    <Compile Include="Ioc\IIocRegister.cs" />
+    <Compile Include="Ioc\IocManager.cs" />
+    <Compile Include="Ioc\IocRegister.cs" />
+    <Compile Include="Ioc\Reflection\DAssemblyFinder.cs" />
+    <Compile Include="Ioc\Reflection\DefaultTypeFinder.cs" />
+    <Compile Include="Ioc\Reflection\IAssemblyFinder.cs" />
+    <Compile Include="Ioc\Reflection\ITypeFinder.cs" />
+    <Compile Include="Ioc\Singleton.cs" />
+    <Compile Include="Logger\DLogLayout.cs" />
+    <Compile Include="Logger\Log4NetAdapter.cs" />
+    <Compile Include="Logger\Log4NetLog.cs" />
+    <Compile Include="Logger\Logging\ILog.cs" />
+    <Compile Include="Logger\Logging\ILogger.cs" />
+    <Compile Include="Logger\Logging\ILoggerAdapter.cs" />
+    <Compile Include="Logger\Logging\LogBase.cs" />
+    <Compile Include="Logger\Logging\Logger.cs" />
+    <Compile Include="Logger\Logging\LoggerAdapterBase.cs" />
+    <Compile Include="Logger\Logging\LoggerManager.cs" />
+    <Compile Include="Logger\Logging\LogLevel.cs" />
+    <Compile Include="Logger\LogInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Extension\ExpressionEx.cs" />
+    <Compile Include="Utility\Extension\JsonEx.cs" />
+    <Compile Include="Utility\Extension\ListEx.cs" />
+    <Compile Include="Utility\Extension\ObjectEx.cs" />
+    <Compile Include="Utility\Extension\StringEx.cs" />
+    <Compile Include="Utility\Extension\TypeEx.cs" />
+    <Compile Include="Utility\Helper\CacheHelper.cs" />
+    <Compile Include="Utility\Helper\Consts.cs" />
+    <Compile Include="Utility\Helper\EmailHelper.cs" />
+    <Compile Include="Utility\Helper\ExcelHelper.cs" />
+    <Compile Include="Utility\Helper\FileHelper.cs" />
+    <Compile Include="Utility\Helper\HttpHelper.cs" />
+    <Compile Include="Utility\Helper\ImageHelper.cs" />
+    <Compile Include="Utility\Helper\JsonTools.cs" />
+    <Compile Include="Utility\Helper\PemConvert.cs" />
+    <Compile Include="Utility\Helper\PinYinHelper.cs" />
+    <Compile Include="Utility\Helper\RandomHelper.cs" />
+    <Compile Include="Utility\Helper\RestClient.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpAttachment.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpClient.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpContent.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpMessage.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpMultipart.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpOAuth2.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpPart.cs" />
+    <Compile Include="Utility\Helper\SendEmail\SecureSmtpRefreshToken.cs" />
+    <Compile Include="Utility\Helper\ValidateCode.cs" />
+    <Compile Include="Utility\Helper\ValidateHelper.cs" />
+    <Compile Include="Utility\Helper\XmlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logger\log4net.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

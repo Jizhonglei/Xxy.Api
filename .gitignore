@@ -1,0 +1,14 @@
+/.vs
+/Js.Web
+/Js.Api/bin
+/Js.Api/obj
+/Js.Api/Properties/PublishProfiles
+/Js.Entity/bin
+/Js.Entity/obj
+/Js.DomainDto/bin
+/Js.DomainDto/obj
+/Js.IFramework/bin
+/Js.IFramework/obj
+/Js.Domain/bin
+/Js.Domain/obj
+
