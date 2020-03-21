@@ -61,8 +61,7 @@ namespace IFramework.Ioc
                 .AsImplementedInterfaces() //接口服务
                 .PropertiesAutowired();//属性注入
 
-            if (BuilderHandler != null)
-                BuilderHandler(Builder);
+            BuilderHandler?.Invoke(Builder);
         }
 
         public void Dispose()

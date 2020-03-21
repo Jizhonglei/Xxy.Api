@@ -28,8 +28,6 @@ namespace Js.Api.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-
-
             // Js.Domain.Template.DomainHelper.MakeDomain("WebUserToken", "WebUserToken", "用户登录凭证表", false, true);
             //Js.Domain.Template.DbSessionFactory.MakeDbSession();
 

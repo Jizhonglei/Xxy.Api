@@ -21,7 +21,7 @@ namespace IFramework.Ioc
             {
                 return CurrentIocManager.Container.Resolve<T>();
             }
-            return default(T);
+            return default;
         }
 
         public static void RegisterGeneric(Type sourseType, Type targeType)
